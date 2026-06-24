@@ -96,3 +96,7 @@ Zakaria Thabet Ahmed
 
 GitHub:
 [Zakaria-thabet-ahmed99](https://github.com/Zakaria-thabet-ahmed99)
+
+## 📸 Preview
+
+![Novel Library Home Page](./public/screenshots/image.png)
