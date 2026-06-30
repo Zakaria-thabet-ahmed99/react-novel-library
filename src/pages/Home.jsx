@@ -1,6 +1,6 @@
 import { useState,useEffect  } from "react";
 
-import NovelBlog from "../components/NovelCard";
+import NovelCard from "../components/NovelCard";
 import SearchBar from "../components/SearchBar";
 import CategoryFilter from "../components/CategoryFilter";
 
@@ -62,7 +62,7 @@ const Home = ({favorites,removeFromFavorites,addToFavorites}) => {
             </div>
 </section>
 
-        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}  filteredNovels={filteredNovels}/>
+        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}  />
         <CategoryFilter selectedType={selectedType} setSelectedType={setSelectedType}/>
 
         <div className="category-filter  ">
@@ -86,7 +86,7 @@ const Home = ({favorites,removeFromFavorites,addToFavorites}) => {
         <div className="novels-container">
         {filteredNovels.length > 0 ? (
             sortedNovels.map((novel) => (
-            <NovelBlog key={novel.id} novel={novel}  isFavorite={favorites.includes(novel.id)} addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites}/>
+            <NovelCard key={novel.id} novel={novel}  isFavorite={favorites.includes(novel.id)} addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites}/>
                 ))
         ) : (
                 <p>No novels found</p>

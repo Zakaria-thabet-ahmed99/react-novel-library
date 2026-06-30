@@ -5,7 +5,7 @@ import Author from "./Author";
 import Title from "./Title";
 import Type from "./Type";
 
-const NovelBlog = ({ novel,addToFavorites,removeFromFavorites,isFavorite }) => {
+const NovelCard = ({ novel,addToFavorites,removeFromFavorites,isFavorite }) => {
 
   return (
     <div  >
@@ -40,4 +40,4 @@ const NovelBlog = ({ novel,addToFavorites,removeFromFavorites,isFavorite }) => {
 
   )
 };
-export default NovelBlog;
+export default NovelCard;

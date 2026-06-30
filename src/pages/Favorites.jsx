@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import NovelCard from "../components/NovelCard";
 import Description from "../components/Description";
 import { Link } from "react-router-dom";
 import Author from "../components//Author";
@@ -23,22 +24,23 @@ const FavoritesNovels = ({favorites,removeFromFavorites}) => {
         
         {favoriteNovels.length > 0 
         ?  (favoriteNovels.map(novel => 
-                <div key={novel.id} className="novel-card"  >
-                    <Link to={`/novel/${novel.id}`} className="novel-link">
-                <img src={novel.image} alt={novel.title}/>
+            <NovelCard key={novel.id} novel={novel}  isFavorite={favorites.includes(novel.id)} removeFromFavorites={removeFromFavorites}/>
 
-                <div className="novel-content">
-                    <Title title={novel.title} />
-                    <Author author={novel.author} />
-                    <Type  type={novel.type} />
-                    <Description description={novel.description} />
-                </div>
-                </Link>
-                <button  onClick={() =>removeFromFavorites(novel.id)}>
-                    Remove From Favorites
-                </button>
+                // <div key={novel.id} className="novel-card"  >
+                //     <Link to={`/novel/${novel.id}`} className="novel-link">
+                // <img src={novel.image} alt={novel.title}/>
 
-                </div>
+                // <div className="novel-content">
+                //     <Title title={novel.title} />
+                //     <Author author={novel.author} />
+                //     <Type  type={novel.type} />
+                //     <Description description={novel.description} />
+                // </div>
+                // </Link>
+                // <button  onClick={() =>removeFromFavorites(novel.id)}>
+                //     Remove From Favorites
+                // </button>
+                // </div>
                 ))
     
         :   (
@@ -47,7 +49,7 @@ const FavoritesNovels = ({favorites,removeFromFavorites}) => {
     </div>
     
     </div> 
-   );
+    );
 }
 
 export default FavoritesNovels;
